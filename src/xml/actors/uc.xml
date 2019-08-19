@@ -1,0 +1,33 @@
+<ACTOR ID="UC" TYPE="GRAPHICS" STATES="5" SYMBOLS="5">
+	<OUTPUT ID="1" SOURCE="ucneutra.gif" X="0" Y="0"/>
+	<OUTPUT ID="2" SOURCE="ucdireita.gif" X="0" Y="0"/>
+	<OUTPUT ID="3" SOURCE="ucesquerda.gif" X="-15" Y="0"/>
+	<OUTPUT ID="4" SOURCE="aceita.gif" X="-50" Y="27"/>
+	<OUTPUT ID="5" SOURCE="rejeita.gif" X="-50" Y="27"/>
+
+	<DESCF>
+		<DESCRIPTION STATE="Q1">direita</DESCRIPTION>
+		<DESCRIPTION STATE="Q2">esquerda</DESCRIPTION>
+		<DESCRIPTION STATE="Q3">aceita</DESCRIPTION>
+		<DESCRIPTION STATE="Q4">rejeita</DESCRIPTION>
+	</DESCF>	
+
+	<TRANSF>
+		<FROM STATE="Q0">
+			<TO STATE="Q0" SYMBOL="n" OUTPUT="1"/>
+			<TO STATE="Q1" SYMBOL="d" OUTPUT="2"/>
+			<TO STATE="Q2" SYMBOL="e" OUTPUT="3"/>			
+		</FROM>	
+		<FROM STATE="Q1">
+			<TO STATE="Q0" SYMBOL="n" OUTPUT="1"/>
+			<TO STATE="Q3" SYMBOL="a" OUTPUT="4"/>
+			<TO STATE="Q4" SYMBOL="r" OUTPUT="5"/>			
+		</FROM>
+		<FROM STATE="Q2">
+			<TO STATE="Q0" SYMBOL="n" OUTPUT="1"/>
+			<TO STATE="Q3" SYMBOL="a" OUTPUT="4"/>
+			<TO STATE="Q4" SYMBOL="r" OUTPUT="5"/>			
+		</FROM>
+	
+	</TRANSF>	
+</ACTOR>

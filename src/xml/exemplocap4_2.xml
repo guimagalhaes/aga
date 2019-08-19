@@ -1,0 +1,153 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE AGA SYSTEM "aga.dtd" [
+	<!ENTITY estado SYSTEM "actors/estado.xml">
+	<!ENTITY afp SYSTEM "actors/automatopilha.xml">
+	<!ENTITY celula SYSTEM "actors/celula.xml">
+	<!ENTITY uc SYSTEM "actors/uc.xml">
+]>
+
+<AGA VERSION="2.0" WIDTH="550" HEIGHT="250" BACKGROUND="255 255 255" FRAMERATE="10" REPEAT="1">
+
+	<HEAD>
+		<TITLE>Aut&#244;mato com Pilha</TITLE>
+		<AUTHOR>Fernando Accorsi</AUTHOR>
+		<SUBJECT>Exemplo 2 em AgaMl 2.0</SUBJECT>
+	</HEAD>
+	
+	&estado;
+	&afp;
+	&celula;
+	&uc;
+
+	<TAPE ID="LOCQ0">
+		<CEL SYMBOL="1" TIME="100" FN="TRANSLATE 75 70 N"/>
+		<CEL SYMBOL="2" TIME="700" />
+		<CEL SYMBOL="1" TIME="300" />
+		<CEL SYMBOL="2" TIME="700" />
+		<CEL SYMBOL="1" TIME="300" />
+		<CEL SYMBOL="2" TIME="700" />
+		<CEL SYMBOL="1" TIME="300" />
+	</TAPE>
+
+	<TAPE ID="LOCQ1">
+		<CEL SYMBOL="1" TIME="3100" FN="TRANSLATE 229 70 N"/>
+		<CEL SYMBOL="2" TIME="700" />
+		<CEL SYMBOL="1" TIME="300" />
+		<CEL SYMBOL="2" TIME="700" />
+		<CEL SYMBOL="1" TIME="300" />
+	</TAPE>
+
+	<TAPE ID="LOCQF">
+		<CEL SYMBOL="1" TIME="5100" FN="TRANSLATE 151 128 N"/>
+		<CEL SYMBOL="2" TIME="700" />
+		<CEL SYMBOL="1" TIME="300" />		
+	</TAPE>
+
+
+	<TAPE ID="LOCAFP">
+		<CEL SYMBOL="i" TIME="800" FN="TRANSLATE 5 50 N"/>
+		<CEL SYMBOL="a" TIME="300" />	
+		<CEL SYMBOL="i" TIME="700" />
+		<CEL SYMBOL="a" TIME="300" />	
+		<CEL SYMBOL="i" TIME="700" />
+		<CEL SYMBOL="b" TIME="300" />	
+		<CEL SYMBOL="i" TIME="700" />
+		<CEL SYMBOL="b" TIME="300" />
+		<CEL SYMBOL="i" TIME="700" />
+		<CEL SYMBOL="_" TIME="300" />
+		<CEL SYMBOL="i" TIME="700" />	
+	
+	</TAPE>
+
+	<TAPE ID="UC">
+		<CEL SYMBOL="n" TIME="800" FN="TRANSLATE 346 50 N"/>
+		<GROUP ITERATION="4">
+			<CEL SYMBOL="d" TIME="300"/>
+			<CEL SYMBOL="n" TIME="700" FN="TRANSLATE 30 0 Y"/>
+		</GROUP>
+		<CEL SYMBOL="n" TIME="300"/>
+		<CEL SYMBOL="d" TIME="50"/>		
+		<CEL SYMBOL="a" TIME="650"/>
+	</TAPE>
+
+	<TAPE ID="UCPILHA">
+		<CEL SYMBOL="n" TIME="1800" FN="TRANSLATE 346 150 N"/>		
+		<CEL SYMBOL="n" TIME="1000" FN="TRANSLATE 30 0 Y"/>
+		<CEL SYMBOL="n" TIME="1300" FN="TRANSLATE -30 0 Y"/>
+	</TAPE>
+
+
+	<TAPE ID="PIL1">
+		<CEL SYMBOL="a" TIME="800" FN="TRANSLATE 350 150 N; VISIBLE N"/>
+		<CEL SYMBOL="B" TIME="3000" FN="VISIBLE Y"/>
+		<CEL SYMBOL="B" TIME="300" FN="VISIBLE N"/>
+		
+	</TAPE>
+	<TAPE ID="PIL2">
+		<CEL SYMBOL="a" TIME="1800" FN="TRANSLATE 380 150 N; VISIBLE N"/>
+		<CEL SYMBOL="B" TIME="1000" FN="VISIBLE Y"/>			
+		<CEL SYMBOL="B" TIME="1300" FN="VISIBLE N"/>
+	</TAPE>
+	
+
+	<TAPE ID="CEL1">
+		<CEL SYMBOL="a" TIME="100" FN="TRANSLATE 350 50 N"/>	
+	</TAPE>
+	<TAPE ID="CEL2">
+		<CEL SYMBOL="a" TIME="100" FN="TRANSLATE 380 50 N"/>	
+	</TAPE>
+	<TAPE ID="CEL3">
+		<CEL SYMBOL="b" TIME="100" FN="TRANSLATE 410 50 N"/>	
+	</TAPE>
+	<TAPE ID="CEL4">
+		<CEL SYMBOL="b" TIME="100" FN="TRANSLATE 440 50 N"/>	
+	</TAPE>
+
+	
+	<INSTANCE ID="Estado q0" ACTOR="ESTADO" ORDER="1">
+		<USE TAPE="LOCQ0"/>
+	</INSTANCE>	
+
+	<INSTANCE ID="Estado q1" ACTOR="ESTADO" ORDER="2">
+		<USE TAPE="LOCQ1"/>
+	</INSTANCE>	
+
+	<INSTANCE ID="Estado qf" ACTOR="ESTADO" ORDER="3">
+		<USE TAPE="LOCQF"/>
+	</INSTANCE>	
+
+	<INSTANCE ID="Transi&#231;&#245;es do Aut&#244;mato com Pilha" ACTOR="AFP" ORDER="4">
+		<USE TAPE="LOCAFP"/>		
+	</INSTANCE>	
+
+	<INSTANCE ID="Unidade de Controle da Fita" ACTOR="UC" ORDER="5">
+		<USE TAPE="UC"/>		
+	</INSTANCE>	
+
+
+	<INSTANCE ID="1 C&#233;lula da Fita" ACTOR="CELULA" ORDER="6">
+		<USE TAPE="CEL1"/>		
+	</INSTANCE>	
+	<INSTANCE ID="2 C&#233;lula da Fita" ACTOR="CELULA" ORDER="7">
+		<USE TAPE="CEL2"/>		
+	</INSTANCE>	
+	<INSTANCE ID="3 C&#233;lula da Fita" ACTOR="CELULA" ORDER="8">
+		<USE TAPE="CEL3"/>		
+	</INSTANCE>		
+	<INSTANCE ID="4 C&#233;lula da Fita" ACTOR="CELULA" ORDER="9">
+		<USE TAPE="CEL4"/>		
+	</INSTANCE>
+
+	<INSTANCE ID="Unidade de Controle da Pilha" ACTOR="UC" ORDER="10">
+		<USE TAPE="UCPILHA"/>		
+	</INSTANCE>
+
+	<INSTANCE ID="1 C&#233;lula da Pilha" ACTOR="CELULA" ORDER="11">
+		<USE TAPE="PIL1"/>		
+	</INSTANCE>	
+	<INSTANCE ID="2 C&#233;lula da Pilha" ACTOR="CELULA" ORDER="12">
+		<USE TAPE="PIL2"/>		
+	</INSTANCE>		
+
+</AGA>	
+		

@@ -1,0 +1,21 @@
+<ACTOR ID="ESTADO" TYPE="GRAPHICS" STATES="2" SYMBOLS="2">
+
+	<OUTPUT ID="1" SOURCE="estadoinativo.gif" X="0" Y="0" />
+	<OUTPUT ID="2" SOURCE="estadoativo.gif" X="0" Y="0" />
+
+	<DESCF>
+		<DESCRIPTION STATE="Q1">ativo corrente</DESCRIPTION>
+	</DESCF>
+
+	<TRANSF>
+		<FROM STATE="Q0">
+        		<TO STATE="Q0" SYMBOL="1" OUTPUT="1" />
+			<TO STATE="Q1" SYMBOL="2" OUTPUT="2" />			
+		</FROM>
+		<FROM STATE="Q1">
+			<TO STATE="Q0" SYMBOL="1" OUTPUT="1" />
+			<TO STATE="Q1" SYMBOL="2" OUTPUT="2" />
+		</FROM>
+	</TRANSF>
+		
+</ACTOR>

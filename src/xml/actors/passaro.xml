@@ -1,0 +1,32 @@
+<ACTOR ID="PASSARO" TYPE="GRAPHICS" STATES="4" SYMBOLS="2">
+
+	<OUTPUT ID="1" SOURCE="passaro1.gif" X="0" Y="0" />
+	<OUTPUT ID="2" SOURCE="passaro2.gif" X="0" Y="0" />
+	<OUTPUT ID="3" SOURCE="passaro3.gif" X="0" Y="0" />
+
+	<DESCF>
+		<DESCRIPTION STATE="2"> passaro normal </DESCRIPTION>
+		<DESCRIPTION STATE="3"> passaro m </DESCRIPTION>
+		<DESCRIPTION STATE="4"> passaro v </DESCRIPTION>
+	</DESCF>
+
+	<TRANSF>
+		<FROM STATE="1">
+            		<TO STATE="2" SYMBOL="1" OUTPUT="1" />
+		</FROM>		
+
+		<FROM STATE="2">
+        	   	<TO STATE="3" SYMBOL="1" OUTPUT="2" />
+		</FROM>
+
+		<FROM STATE="3">
+        	    	<TO STATE="4" SYMBOL="1" OUTPUT="3" />
+            		<TO STATE="2" SYMBOL="2" OUTPUT="1" />
+		</FROM>
+
+		<FROM STATE="4">
+        	    	<TO STATE="3" SYMBOL="1" OUTPUT="2" />
+		</FROM>
+	</TRANSF>
+
+</ACTOR>

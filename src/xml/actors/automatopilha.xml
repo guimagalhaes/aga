@@ -1,0 +1,24 @@
+<ACTOR ID="AFP" TYPE="GRAPHICS" STATES="3" SYMBOLS="4">
+	<OUTPUT ID="1" SOURCE="e2inicial.gif" X="0" Y="0"/>
+	<OUTPUT ID="2" SOURCE="e2q0aq0.gif" X="0" Y="14"/>
+	<OUTPUT ID="3" SOURCE="e2q0bq1.gif" X="105" Y="12"/>
+	<OUTPUT ID="4" SOURCE="e2q0_qf.gif" X="75" Y="49"/>
+	<OUTPUT ID="5" SOURCE="e2q1bq1.gif" X="253" Y="11"/>
+	<OUTPUT ID="6" SOURCE="e2q1_qf.gif" X="180" Y="53"/>
+	<TRANSF>
+		<FROM STATE="Q0">
+			<TO STATE="Q0" SYMBOL="i" OUTPUT="1"/>
+			<TO STATE="Q0" SYMBOL="a" OUTPUT="1;2"/>
+			<TO STATE="Q1" SYMBOL="b" OUTPUT="1;3"/>
+			<TO STATE="QF" SYMBOL="_" OUTPUT="1;4"/>				
+		</FROM>
+		<FROM STATE="Q1">
+			<TO STATE="Q1" SYMBOL="i" OUTPUT="1"/>
+			<TO STATE="Q1" SYMBOL="b" OUTPUT="1;5"/>
+			<TO STATE="QF" SYMBOL="_" OUTPUT="1;6"/>				
+		</FROM>
+		<FROM STATE="QF">
+			<TO STATE="QF" SYMBOL="i" OUTPUT="1"/>
+		</FROM>
+	</TRANSF>	
+</ACTOR>

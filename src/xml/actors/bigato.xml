@@ -1,0 +1,36 @@
+<ACTOR ID="BICHO" TYPE="GRAPHICS" STATES="6" SYMBOLS="2">
+		<OUTPUT ID="1" SOURCE="contraida.gif" X="0" Y="13"/>
+		<OUTPUT ID="2" SOURCE="estendida.gif" X="0" Y="42"/>
+		<OUTPUT ID="3" SOURCE="aberta.gif" X="0" Y="22"/>
+		<OUTPUT ID="4" SOURCE="alerta.gif" X="0" Y="0"/>
+		<OUTPUT ID="5" SOURCE="rindo.gif" X="0" Y="0"/>
+		
+		<DESCF>
+			<DESCRIPTION STATE="4">Boca aberta</DESCRIPTION>
+			<DESCRIPTION STATE="3">Alerta</DESCRIPTION>
+			<DESCRIPTION STATE="6">Rindo</DESCRIPTION>
+		</DESCF>
+		<TRANSF>
+			<FROM STATE="1">
+				<TO STATE="2" SYMBOL="1" OUTPUT="2"/>
+			</FROM>
+			<FROM STATE="2">
+				<TO STATE="5" SYMBOL="1" OUTPUT="1"/>
+				<TO STATE="4" SYMBOL="2" OUTPUT="3"/>
+				<TO STATE="3" SYMBOL="3" OUTPUT="4"/>
+			</FROM>
+			<FROM STATE="3">
+				<TO STATE="2" SYMBOL="1" OUTPUT="2"/>
+				<TO STATE="6" SYMBOL="2" OUTPUT="5"/>
+			</FROM>
+			<FROM STATE="4">
+				<TO STATE="2" SYMBOL="1" OUTPUT="2"/>
+			</FROM>
+			<FROM STATE="5">
+				<TO STATE="2" SYMBOL="1" OUTPUT="2"/>
+			</FROM>
+			<FROM STATE="6">
+				<TO STATE="3" SYMBOL="1" OUTPUT="4"/>
+			</FROM>
+		</TRANSF>
+	</ACTOR>

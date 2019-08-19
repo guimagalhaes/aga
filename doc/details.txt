@@ -1,0 +1,25 @@
+-A animação não pára quando ocorre uma indefinição em algum autômato, 
+isto é, quando uma transição de estado não está definida para alguma 
+entrada. Ela continua exibindo a imagem anterior.
+-Atributos width e height do AGA não estão sendo usados. O tamanho
+da applet pode apenas ser definido no tag <APPLET> do HTML.
+-Atributos STATES e SYMBOLS do AUTOMATON não estão sendo usados também.
+-Caso o timer de um ator (soma dos TIME) acabar antes que outro, sua 
+imagem final permanecerá sendo exibida.
+-Não há validação do XML.
+-A falta de elementos ou atributos obrigatórios no XML causarão 
+exceção na execução.
+-Conversões de String para int não são verificadas.
+-A animaçao quando pausada e novamente reiniciada, não reinicia o som
+de onde parou, caso houvesse som, apenas corta o som.
+Notas sobre o XML que gera a animação:
+-A ordem das instâncias devem começar apartir de 1 e incrementar de um em um.
+-Estado inicial é o STATE do primeito FROM que aparecer.
+-O nome dos elementos, atributos e seus valores devem estar sempre 
+em maiúsculas, pois o parser é 'case sensitive'.
+-ao utilizar escala, as coordenadas da imagem sofrem uma mudança. Ajuste
+as coordenadas fazendo translações ou ajustando o valor x e y do OUTPUT.
+-se o ator for do tipo SOUND, o ORDER é desconsiderado. Considera-se que 
+todos os sons são tocados simultaneamente no momento que a imagem é exibida
+na tela.
+-o <OUTPUT> do ACTOR do tipo SOUND não contém os atributos X e Y.

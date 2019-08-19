@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="no"?>
+
+<!DOCTYPE AGA SYSTEM "aga.dtd" [
+	<!ENTITY espaco SYSTEM "actors/espaco.xml">
+	<!ENTITY espaco_som SYSTEM "actors/som_espaco.xml">
+	<!ENTITY nave SYSTEM "actors/nave.xml">
+	<!ENTITY fundo SYSTEM "tapes/fundo.xml">
+	<!ENTITY curva SYSTEM "tapes/curva.xml">
+	<!ENTITY espaco_som_t SYSTEM "tapes/som_espaco.xml">
+]>
+
+<AGA VERSION="2.0" WIDTH="600" HEIGHT="150" BACKGROUND="255 255 255" FRAMERATE="10" REPEAT="LOOP">
+
+	<HEAD>
+            <TITLE>Foguete</TITLE>
+            <AUTHOR>Guilherme</AUTHOR>
+            <SUBJECT>Teste da rotacao</SUBJECT>
+	</HEAD>
+
+	&espaco;
+
+	&espaco_som;
+
+	&nave;
+
+	&fundo;
+
+	&curva;
+
+	&espaco_som_t;
+	
+	<INSTANCE ID="ESPACO" ACTOR="ESPACO" ORDER="1">
+  		<USE TAPE="FUNDO" />
+  	</INSTANCE>
+
+	<INSTANCE ID="NAVE VIAJANDO NO ESPACO" ACTOR="NAVE" ORDER="2">
+  		<USE TAPE="CURVA" />
+  	</INSTANCE>
+
+	<INSTANCE ID="SOM DO ESPACO" ACTOR="ESPACO_SOM">
+  		<USE TAPE="ESPACO_SOM" />
+  	</INSTANCE>	
+</AGA>

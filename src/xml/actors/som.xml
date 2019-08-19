@@ -1,0 +1,16 @@
+<ACTOR ID="SOM" TYPE="SOUND" STATES="2" SYMBOLS="1">
+
+	<OUTPUT ID="1" SOURCE="crunch.wav"/>
+	<OUTPUT ID="2" SOURCE="riso2.au"/>
+
+	<TRANSF>
+		<FROM STATE="1">
+            		<TO STATE="2" SYMBOL="1" OUTPUT="1" />
+		</FROM>
+
+		<FROM STATE="2">
+            		<TO STATE="1" SYMBOL="1" OUTPUT="2" />
+		</FROM>
+	</TRANSF>
+
+</ACTOR>

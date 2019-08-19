@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE AGA SYSTEM "aga.dtd" [
+	<!ENTITY bigato SYSTEM "actors/bigato.xml">
+	<!ENTITY maca SYSTEM "actors/maca.xml">
+	<!ENTITY comer SYSTEM "tapes/comer.xml">
+	<!ENTITY rir SYSTEM "tapes/rir.xml">
+	<!ENTITY mordida SYSTEM "tapes/mordida.xml">
+]>
+
+<AGA VERSION="2.0" WIDTH="200" HEIGHT="150" BACKGROUND="255 255 255" FRAMERATE="10" REPEAT="LOOP">
+
+	<HEAD>
+		<TITLE>Bigato</TITLE>
+		<AUTHOR>Fernando Accorsi</AUTHOR>
+		<SUBJECT>Exemplo 1 em AgaMl 2.0</SUBJECT>
+	</HEAD>
+
+	&bigato;
+
+	&maca;
+
+	&comer;
+
+	&rir;
+
+	&mordida;
+
+
+	<INSTANCE ID="BICHO FAMINTO" ACTOR="BICHO" ORDER="1">
+		<USE TAPE="COMER"/>
+		<USE TAPE="RIR"/>
+	</INSTANCE>	
+
+	<INSTANCE ID="MACA VITIMA" ACTOR="MACA" ORDER="2">
+		<USE TAPE="MORDIDA"/>
+	</INSTANCE>
+</AGA>	
+		

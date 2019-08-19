@@ -1,0 +1,11 @@
+<ACTOR ID="ESPACO" TYPE="GRAPHICS" STATES="2" SYMBOLS="1">
+
+	<OUTPUT ID="1" SOURCE="starfield.gif" X="0" Y="0" />
+
+	<TRANSF>
+		<FROM STATE="1">
+       			<TO STATE="1" SYMBOL="1" OUTPUT="1" />
+		</FROM>
+	</TRANSF>
+
+</ACTOR>

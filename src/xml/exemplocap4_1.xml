@@ -1,0 +1,124 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE AGA SYSTEM "aga.dtd" [
+	<!ENTITY estado SYSTEM "actors/estado.xml">
+	<!ENTITY afd SYSTEM "actors/automato.xml">
+	<!ENTITY celula SYSTEM "actors/celula.xml">
+	<!ENTITY uc SYSTEM "actors/uc.xml">
+]>
+
+<AGA VERSION="2.0" WIDTH="460" HEIGHT="250" BACKGROUND="255 255 255" FRAMERATE="10" REPEAT="1">
+
+	<HEAD>
+		<TITLE>Aut&#244;mato Finito Determin&#237;stico</TITLE>
+		<AUTHOR>Fernando Accorsi</AUTHOR>
+		<SUBJECT>Exemplo 1 em AgaMl 2.0</SUBJECT>
+	</HEAD>
+	
+	&estado;
+	&afd;
+	&celula;
+	&uc;
+
+	<TAPE ID="LOCQ0">
+		<CEL SYMBOL="1" TIME="100" FN="TRANSLATE 92 40 N"/>
+		<CEL SYMBOL="2" TIME="700" />
+		<CEL SYMBOL="1" TIME="300" />
+	</TAPE>
+
+	<TAPE ID="LOCQ1">
+		<CEL SYMBOL="1" TIME="1100" FN="TRANSLATE 15 90 N"/>
+		<CEL SYMBOL="2" TIME="700" />
+		<CEL SYMBOL="1" TIME="300" />
+	</TAPE>
+
+	<TAPE ID="LOCQ2">
+		<CEL SYMBOL="1" TIME="2100" FN="TRANSLATE 170 90 N"/>
+		<CEL SYMBOL="2" TIME="700" />
+		<CEL SYMBOL="1" TIME="300" />		
+	</TAPE>
+
+	<TAPE ID="LOCQF">
+		<CEL SYMBOL="1" TIME="3100" FN="TRANSLATE 91 146 N"/>
+		<CEL SYMBOL="2" TIME="700" />
+		<CEL SYMBOL="1" TIME="300" />
+		<CEL SYMBOL="2" TIME="700" />		
+	</TAPE>
+
+	<TAPE ID="LOCAFD">
+		<CEL SYMBOL="i" TIME="800" FN="TRANSLATE 26 24 N"/>
+		<CEL SYMBOL="a" TIME="300" />	
+		<CEL SYMBOL="i" TIME="700" />
+		<CEL SYMBOL="b" TIME="300" />	
+		<CEL SYMBOL="i" TIME="700" />
+		<CEL SYMBOL="b" TIME="300" />	
+		<CEL SYMBOL="i" TIME="700" />
+		<CEL SYMBOL="a" TIME="300" />
+		<CEL SYMBOL="i" TIME="700" />	
+	</TAPE>
+
+	<TAPE ID="UC">
+		<CEL SYMBOL="n" TIME="800" FN="TRANSLATE 246 50 N"/>
+		<GROUP ITERATION="3">
+			<CEL SYMBOL="d" TIME="300"/>
+			<CEL SYMBOL="n" TIME="700" FN="TRANSLATE 30 0 Y"/>
+		</GROUP>
+		<CEL SYMBOL="d" TIME="300"/>
+		<CEL SYMBOL="a" TIME="100" FN="TRANSLATE 30 0 Y"/>
+	</TAPE>
+
+	
+
+	<TAPE ID="CEL1">
+		<CEL SYMBOL="a" TIME="100" FN="TRANSLATE 250 50 N"/>	
+	</TAPE>
+	<TAPE ID="CEL2">
+		<CEL SYMBOL="b" TIME="100" FN="TRANSLATE 280 50 N"/>	
+	</TAPE>
+	<TAPE ID="CEL3">
+		<CEL SYMBOL="b" TIME="100" FN="TRANSLATE 310 50 N"/>	
+	</TAPE>
+	<TAPE ID="CEL4">
+		<CEL SYMBOL="a" TIME="100" FN="TRANSLATE 340 50 N"/>	
+	</TAPE>
+
+
+
+	<INSTANCE ID="Estado q0" ACTOR="ESTADO" ORDER="1">
+		<USE TAPE="LOCQ0"/>
+	</INSTANCE>	
+
+	<INSTANCE ID="Estado q1" ACTOR="ESTADO" ORDER="2">
+		<USE TAPE="LOCQ1"/>
+	</INSTANCE>	
+
+	<INSTANCE ID="Estado q2" ACTOR="ESTADO" ORDER="3">
+		<USE TAPE="LOCQ2"/>
+	</INSTANCE>	
+	<INSTANCE ID="Estado qf" ACTOR="ESTADO" ORDER="4">
+		<USE TAPE="LOCQF"/>
+	</INSTANCE>	
+
+	<INSTANCE ID="Transi&#231;&#245;es do Aut&#244;mato" ACTOR="AFD" ORDER="5">
+		<USE TAPE="LOCAFD"/>		
+	</INSTANCE>	
+
+	<INSTANCE ID="Unidade de Controle" ACTOR="UC" ORDER="6">
+		<USE TAPE="UC"/>		
+	</INSTANCE>	
+
+
+	<INSTANCE ID="1 C&#233;lula da Fita" ACTOR="CELULA" ORDER="7">
+		<USE TAPE="CEL1"/>		
+	</INSTANCE>	
+	<INSTANCE ID="2 C&#233;lula da Fita" ACTOR="CELULA" ORDER="8">
+		<USE TAPE="CEL2"/>		
+	</INSTANCE>	
+	<INSTANCE ID="3 C&#233;lula da Fita" ACTOR="CELULA" ORDER="9">
+		<USE TAPE="CEL3"/>		
+	</INSTANCE>		
+	<INSTANCE ID="4 C&#233;lula da Fita" ACTOR="CELULA" ORDER="10">
+		<USE TAPE="CEL4"/>		
+	</INSTANCE>		
+
+</AGA>	
+		

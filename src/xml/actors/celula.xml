@@ -1,0 +1,18 @@
+<ACTOR ID="CELULA" TYPE="GRAPHICS" STATES="1" SYMBOLS="6">
+	<OUTPUT ID="1" SOURCE="simboloa.gif" X="0" Y="0"/>
+	<OUTPUT ID="2" SOURCE="simbolob.gif" X="0" Y="0"/>
+	<OUTPUT ID="3" SOURCE="simboloca.gif" X="0" Y="0"/>
+	<OUTPUT ID="4" SOURCE="simbolocb.gif" X="0" Y="0"/>
+	<OUTPUT ID="5" SOURCE="simbolobranco.gif" X="0" Y="0"/>
+	<OUTPUT ID="6" SOURCE="simboloinicial.gif" X="0" Y="0"/>
+	<TRANSF>
+		<FROM STATE="Q0">
+			<TO STATE="Q0" SYMBOL="a" OUTPUT="1"/>
+			<TO STATE="Q0" SYMBOL="b" OUTPUT="2"/>
+			<TO STATE="Q0" SYMBOL="A" OUTPUT="3"/>
+			<TO STATE="Q0" SYMBOL="B" OUTPUT="4"/>
+			<TO STATE="Q0" SYMBOL="-" OUTPUT="5"/>
+			<TO STATE="Q0" SYMBOL="*" OUTPUT="6"/>
+		</FROM>		
+	</TRANSF>	
+</ACTOR>

@@ -1,0 +1,15 @@
+<ACTOR ID="SOL" TYPE="GRAPHICS" STATES="1" SYMBOLS="1">
+
+	<OUTPUT ID="1" SOURCE="sol.gif" X="400" Y="120" />
+
+	<DESCF>
+		<DESCRIPTION STATE="1"> Sol </DESCRIPTION>
+	</DESCF>
+
+	<TRANSF>
+		<FROM STATE="1">
+        		<TO STATE="1" SYMBOL="1" OUTPUT="1" />
+		</FROM>
+	</TRANSF>
+		
+</ACTOR>

@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="no"?>
+
+<!DOCTYPE AGA SYSTEM "aga.dtd" [
+	<!ENTITY mar SYSTEM "actors/mar.xml">
+	<!ENTITY sol SYSTEM "actors/sol.xml">
+	<!ENTITY passaro SYSTEM "actors/passaro.xml">
+	<!ENTITY mar_fita SYSTEM "tapes/mar.xml">
+	<!ENTITY sol_fita SYSTEM "tapes/sunset.xml">
+	<!ENTITY passaro_fita SYSTEM "tapes/voar.xml">
+]>
+
+<AGA VERSION="2.0" WIDTH="300" HEIGHT="150" BACKGROUND="255 255 255" FRAMERATE="5" REPEAT="LOOP">
+
+	<HEAD>
+            <TITLE>Passaro ao por do sol</TITLE>
+            <AUTHOR>Guilherme</AUTHOR>
+            <SUBJECT>Teste da escala</SUBJECT>
+	</HEAD>	
+
+	&sol;
+	
+	&mar;
+
+	&passaro;
+
+	&sol_fita;
+	
+	&mar_fita;
+
+	&passaro_fita;
+
+	<INSTANCE ID="MAR PARADO" ACTOR="MAR" ORDER="2">
+  		<USE TAPE="MAR" />   		
+  	</INSTANCE>
+
+	<INSTANCE ID="SOL SE PONDO" ACTOR="SOL" ORDER="1">
+  		<USE TAPE="SUNSET" />   		
+  	</INSTANCE>
+
+	<INSTANCE ID="PASSARO VOANDO" ACTOR="PASSARO" ORDER="3">
+  		<USE TAPE="VOAR" />   		
+  	</INSTANCE>	
+
+</AGA>

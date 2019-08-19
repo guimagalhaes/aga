@@ -1,0 +1,16 @@
+	<ACTOR ID="MACA" TYPE="GRAPHICS" STATES="3" SYMBOLS="1">
+		<OUTPUT ID="1" SOURCE="maca.gif" X="0" Y="0"/>
+		<OUTPUT ID="2" SOURCE="mordida.gif" X="0" Y="0"/>
+		
+		<DESCF>
+			<DESCRIPTION STATE="3">Maca Mordida</DESCRIPTION>
+		</DESCF>
+		<TRANSF>
+			<FROM STATE="1">
+				<TO STATE="2" SYMBOL="1" OUTPUT="1"/>				
+			</FROM>
+			<FROM STATE="2">
+				<TO STATE="3" SYMBOL="1" OUTPUT="2"/>				
+			</FROM>
+		</TRANSF>	
+	</ACTOR>

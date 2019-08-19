@@ -1,0 +1,15 @@
+<ACTOR ID="MAR" TYPE="GRAPHICS" STATES="1" SYMBOLS="1">
+
+	<OUTPUT ID="1" SOURCE="mar.gif" X="0" Y="110" />
+
+	<DESCF>
+		<DESCRIPTION STATE="1"> Mar </DESCRIPTION>
+	</DESCF>
+
+	<TRANSF>
+		<FROM STATE="1">
+            		<TO STATE="1" SYMBOL="1" OUTPUT="1" />
+		</FROM>
+	</TRANSF>		
+
+</ACTOR>

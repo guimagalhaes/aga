@@ -1,0 +1,11 @@
+<ACTOR ID="ESPACO_SOM" TYPE="SOUND" STATES="1" SYMBOLS="1">
+
+	<OUTPUT ID="1" SOURCE="spacemusic.au"/>
+
+	<TRANSF>
+		<FROM STATE="1">
+       			<TO STATE="1" SYMBOL="1" OUTPUT="1" />
+		</FROM>
+	</TRANSF>
+
+</ACTOR>

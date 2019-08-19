@@ -1,0 +1,45 @@
+<ACTOR ID="TURING" TYPE="GRAPHICS" STATES="5" SYMBOLS="6">
+	<OUTPUT ID="1" SOURCE="e3inicial.gif" X="0" Y="0"/>
+	<OUTPUT ID="2" SOURCE="e3q0_q0.gif" X="38" Y="9"/>
+	<OUTPUT ID="3" SOURCE="e3q0aq1.gif" X="120" Y="43"/>
+	<OUTPUT ID="4" SOURCE="e3q0Bq3.gif" X="99" Y="82"/>
+	<OUTPUT ID="5" SOURCE="e3q0_q4.gif" X="0" Y="74"/>
+	<OUTPUT ID="6" SOURCE="e3q1aq1.gif" X="181" Y="72"/>
+	<OUTPUT ID="7" SOURCE="e3q1bq2.gif" X="227" Y="43"/>
+	<OUTPUT ID="8" SOURCE="e3q1bq1.gif" X="179" Y="71"/>
+	<OUTPUT ID="9" SOURCE="e3q2aq2.gif" X="281" Y="71"/>
+	<OUTPUT ID="10" SOURCE="e3q2bq2.gif" X="285" Y="72"/>
+	<OUTPUT ID="11" SOURCE="e3q2aq0.gif" X="113" Y="0"/>
+	<OUTPUT ID="12" SOURCE="e3q3bq3.gif" X="110" Y="144"/>
+	<OUTPUT ID="13" SOURCE="e3q3_q4.gif" X="98" Y="185"/>
+
+	<TRANSF>
+		<FROM STATE="Q0">
+			<TO STATE="Q0" SYMBOL="i" OUTPUT="1"/>
+			<TO STATE="Q0" SYMBOL="*" OUTPUT="1;2"/>
+			<TO STATE="Q1" SYMBOL="a" OUTPUT="1;3"/>
+			<TO STATE="Q3" SYMBOL="B" OUTPUT="1;4"/>
+			<TO STATE="Q4" SYMBOL="_" OUTPUT="1;5"/>								
+		</FROM>
+		<FROM STATE="Q1">
+			<TO STATE="Q1" SYMBOL="i" OUTPUT="1"/>
+			<TO STATE="Q1" SYMBOL="a" OUTPUT="1;6"/>
+			<TO STATE="Q1" SYMBOL="B" OUTPUT="1;8"/>
+			<TO STATE="Q2" SYMBOL="b" OUTPUT="1;7"/>				
+		</FROM>
+		<FROM STATE="Q2">
+			<TO STATE="Q2" SYMBOL="i" OUTPUT="1"/>
+			<TO STATE="Q2" SYMBOL="a" OUTPUT="1;9"/>
+			<TO STATE="Q2" SYMBOL="B" OUTPUT="1;10"/>
+			<TO STATE="Q0" SYMBOL="A" OUTPUT="1;11"/>				
+		</FROM>
+		<FROM STATE="Q3">
+			<TO STATE="Q3" SYMBOL="i" OUTPUT="1"/>
+			<TO STATE="Q3" SYMBOL="B" OUTPUT="1;12"/>
+			<TO STATE="Q4" SYMBOL="_" OUTPUT="1;13"/>			
+		</FROM>
+		<FROM STATE="Q4">
+			<TO STATE="Q4" SYMBOL="i" OUTPUT="1"/>						
+		</FROM>
+	</TRANSF>	
+</ACTOR>

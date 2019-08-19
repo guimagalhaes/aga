@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE AGA SYSTEM "aga.dtd" [
+	<!ENTITY bigato SYSTEM "actors/bigato.xml">	
+	<!ENTITY espelho SYSTEM "tapes/espelho.xml">
+	<!ENTITY espelho2 SYSTEM "tapes/espelho2.xml">
+]>
+
+<AGA VERSION="2.0" WIDTH="200" HEIGHT="150" BACKGROUND="255 255 255" FRAMERATE="10" REPEAT="LOOP">
+	
+	<HEAD>
+		<TITLE>Bigato</TITLE>
+		<AUTHOR>Fernando Accorsi</AUTHOR>
+		<SUBJECT>Exemplo 1 em AgaMl 2.0</SUBJECT>
+	</HEAD>
+	
+	&bigato;
+
+	&espelho;
+
+	&espelho2;
+
+	<INSTANCE ID="BICHO" ACTOR="BICHO" ORDER="1">
+		<USE TAPE="ESPELHO"/>
+	</INSTANCE>
+
+	<INSTANCE ID="BICHO2" ACTOR="BICHO" ORDER="2">
+		<USE TAPE="ESPELHO2"/>
+	</INSTANCE>
+</AGA>	
+
+
+		

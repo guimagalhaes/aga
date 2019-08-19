@@ -1,0 +1,32 @@
+<ACTOR ID="AFD" TYPE="GRAPHICS" STATES="4" SYMBOLS="3">
+	<OUTPUT ID="1" SOURCE="e1inicial.gif" X="0" Y="0"/>
+	<OUTPUT ID="2" SOURCE="e1q0aq1.gif" X="18" Y="37"/>
+	<OUTPUT ID="3" SOURCE="e1q0bq2.gif" X="98" Y="38"/>
+	<OUTPUT ID="4" SOURCE="e1q1aqf.gif" X="15" Y="94"/>
+	<OUTPUT ID="5" SOURCE="e1q1bq2.gif" X="24" Y="60"/>
+	<OUTPUT ID="6" SOURCE="e1q2aq1.gif" X="25" Y="83"/>
+	<OUTPUT ID="7" SOURCE="e1q2bqf.gif" X="100" Y="93"/>
+	<OUTPUT ID="8" SOURCE="e1qfabqf.gif" X="58" Y="155"/>
+	<TRANSF>
+		<FROM STATE="Q0">
+			<TO STATE="Q0" SYMBOL="i" OUTPUT="1"/>
+			<TO STATE="Q1" SYMBOL="a" OUTPUT="1;2"/>
+			<TO STATE="Q2" SYMBOL="b" OUTPUT="3"/>				
+		</FROM>
+		<FROM STATE="Q1">
+			<TO STATE="Q1" SYMBOL="i" OUTPUT="1"/>
+			<TO STATE="QF" SYMBOL="a" OUTPUT="1;4"/>
+			<TO STATE="Q2" SYMBOL="b" OUTPUT="1;5"/>				
+		</FROM>
+		<FROM STATE="Q2">
+			<TO STATE="Q2" SYMBOL="i" OUTPUT="1"/>
+			<TO STATE="Q1" SYMBOL="a" OUTPUT="1;6"/>
+			<TO STATE="QF" SYMBOL="b" OUTPUT="1;7"/>				
+		</FROM>
+		<FROM STATE="QF">
+			<TO STATE="QF" SYMBOL="i" OUTPUT="1"/>
+			<TO STATE="QF" SYMBOL="a" OUTPUT="1;8"/>
+			<TO STATE="QF" SYMBOL="b" OUTPUT="1;8"/>
+		</FROM>
+	</TRANSF>	
+</ACTOR>

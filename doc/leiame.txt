@@ -1,0 +1,22 @@
+Compilar:
+No prompt, vá até o diretório dos arquivos .java e digite "javac *.java".
+É necessário ter instalado o JAXP (crimson.jar e jaxp.jar) 
+e o JDOM (jdom.jar). Esses 3 arquivos .jar devem ser colocados no diretório
+<java>/jre/lib/ext (use '/' em vez de '\' no linux), onde <java> é o path do java.
+
+Executar:
+O endereço web onde são colocados os arquivos xml e gifs do aga devem ser 
+editados no Animator.java.
+Os HTMLs que contém a applet devem ser criadas apartir do template.htm.
+Modifique nesse arquivo todos os atributos width e height da applet e os 
+valores dos parâmetros "xml" e "useControls", que aparecem 3 vezes no arquivo.
+Na linha de comando digitar "appletviewer 1.htm", estando no diretório
+em que estão os html e os .class.
+Para visualizar no browser, coloque em um servidor web os HTMLs com a 
+applet, todos os .jar citados acima e o aga.jar. Todos no mesmo diretório.
+Ao abrir o HTML no browser pela primeira vez, será verificado se existe um 
+plugin específico, se não existe, ele baixará (Aceite o download).
+
+Possíveis Trabalhos Futuros
+-Editor para gerar o XML.
+-Template HTML com o tag <APPLET> extendido para a plataforma MAC.
