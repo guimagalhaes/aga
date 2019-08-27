@@ -48,12 +48,12 @@ An example of a state machine definitions in xml:
 	<TAPE ID="eat">
 	  <CEL SYMBOL="1" TIME="200" FN="TRANSLATE 2 50 N"/>
 	  <CEL SYMBOL="1" TIME="200" FN="TRANSLATE 30 0 Y"/>		
-  </TAPE>
+        </TAPE>
 
 	<TAPE ID="byte">
 	  <CEL SYMBOL="1" TIME="400" FN="TRANSLATE 142 70 N"/>
 	  <CEL SYMBOL="1" TIME="600"/>
-  </TAPE>
+        </TAPE>
 
 	<INSTANCE ID="hungry worm" ACTOR="worm" ORDER="1">
 		<USE TAPE="eat"/>
