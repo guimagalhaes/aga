@@ -1,5 +1,4 @@
-# aga
-Automaton based Graphic Animation
+# Finite Automaton Based Graphic Animation
 
 A cross-platform system for teaching finite automata.
 
